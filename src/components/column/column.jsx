@@ -1,14 +1,23 @@
-import Card from "./card"
+import Card from "../card/card"
 
 const Column = () => {
-    <div className="main__column column">
+  return (<div className="main__column column">
     <div className="column__title">
         <p>Без статуса</p>
     </div>
     <div className="cards">
         <Card />
     
-        <div className="cards__item">
+    </div>
+ </div>	
+  )
+}
+
+export default Column;
+
+
+
+        {/* <div className="cards__item">
             <div className="cards__card card">
                 <div className="card__group">
                     <div className="card__theme _green">
@@ -42,9 +51,9 @@ const Column = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */}
     
-        <div className="cards__item">
+        {/* <div className="cards__item">
             <div className="cards__card card">
                 <div className="card__group">
                     <div className="card__theme _orange">
@@ -114,9 +123,9 @@ const Column = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */}
         
-        <div className="cards__item">
+        {/* <div className="cards__item">
             <div className="cards__card card">
                 <div className="card__group">
                     <div className="card__theme _orange">
@@ -150,9 +159,4 @@ const Column = () => {
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>	
-}
-
-export default Column;
+        </div> */}
