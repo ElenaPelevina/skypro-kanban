@@ -4,12 +4,30 @@ const MainContent = () => {
     return (
         <main className="main">
 			<div className="container">
-				
 				<div className="main__block">
 					<div className="main__content">
 						<Column />
 
-						<div className="main__column">
+                        <Column />
+
+                        <Column />
+
+                        <Column />
+
+                        <Column />
+
+						
+					</div>
+				
+				</div>
+			</div>
+		</main>
+    )
+}
+
+export default MainContent;
+
+{/* <div className="main__column">
 							<div className="column__title">
 								<p>Нужно сделать</p>
 							</div>
@@ -50,9 +68,9 @@ const MainContent = () => {
 									</div>
 								</div>
 							</div>
-						</div>
-                        
-						<div className="main__column">
+						</div> */}
+
+                        	{/* <div className="main__column">
 							<div className="column__title">
 								<p>В работе</p>
 							</div>
@@ -165,8 +183,9 @@ const MainContent = () => {
 									</div>
 								</div>
 							</div>
-						</div>
-						<div className="main__column">
+						</div> */}
+
+                        {/* <div className="main__column">
 							<div className="column__title">
 								<p>Тестирование</p>
 							</div>
@@ -207,8 +226,9 @@ const MainContent = () => {
 									</div>
 								</div>
 							</div>
-						</div>
-						<div className="main__column">
+						</div> */}
+
+                        {/* <div className="main__column">
 							<div className="column__title">
 								<p>Готово</p>
 							</div>
@@ -249,15 +269,4 @@ const MainContent = () => {
 									</div>
 								</div>
 							</div>
-						</div>
-				
-						
-					</div>
-				
-				</div>
-			</div>
-		</main>
-    )
-}
-
-export default MainContent;
+						</div> */}
