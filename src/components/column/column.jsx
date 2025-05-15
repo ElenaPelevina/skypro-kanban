@@ -1,9 +1,9 @@
 import Card from "../card/card"
 
-const Column = () => {
+const Column = ({title}) => {
   return (<div className="main__column column">
     <div className="column__title">
-        <p>Без статуса</p>
+        <p>{title}</p>
     </div>
     <div className="cards">
         <Card />

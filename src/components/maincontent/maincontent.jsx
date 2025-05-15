@@ -6,15 +6,15 @@ const MainContent = () => {
 			<div className="container">
 				<div className="main__block">
 					<div className="main__content">
-						<Column />
+						<Column title = 'Без статуса' />
 
-                        <Column />
+                        <Column title = 'Нужно сделать' />
 
-                        <Column />
+                        <Column title = 'В работе' />
 
-                        <Column />
+                        <Column title = 'Тестирование' />
 
-                        <Column />
+                        <Column title = 'Готово' />
 
 						
 					</div>
