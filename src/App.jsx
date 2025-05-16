@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -10,6 +10,13 @@ import MainContent from './components/maincontent/maincontent'
 
 
 function App() {
+ const [loading, setLoading] = useState(true)
+
+ useEffect(() => {
+  setTimeout(() => {
+    setLoading(false);
+  }, 3000)
+ }, [])
 
   return (
   <>
@@ -24,7 +31,7 @@ function App() {
 
 		<Header /> 
 
-		<MainContent /> 
+		<MainContent loading = {loading}/> 
 		
     </div>
 
