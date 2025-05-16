@@ -10,7 +10,6 @@ import MainContent from './components/maincontent/maincontent'
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
   <>
