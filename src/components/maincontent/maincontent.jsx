@@ -1,4 +1,6 @@
+
 import Column from "../column/column"
+
 
 const MainContent = () => {
     return (
@@ -6,15 +8,16 @@ const MainContent = () => {
 			<div className="container">
 				<div className="main__block">
 					<div className="main__content">
-						<Column title = 'Без статуса' />
+						
+						<Column status = 'Без статуса' /> 
 
-                        <Column title = 'Нужно сделать' />
+                        <Column status = 'Нужно сделать' />
 
-                        <Column title = 'В работе' />
+                        <Column status = 'В работе' />
 
-                        <Column title = 'Тестирование' />
+                        <Column status = 'Тестирование' />
 
-                        <Column title = 'Готово' />
+                        <Column status = 'Готово'/>
 
 						
 					</div>
