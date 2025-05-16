@@ -1,6 +1,14 @@
 import User from "../popuser/user";
+import { useState } from "react";
 
 const Header = () => {
+    const [open, setOpen] = useState(false)
+    const toClose = () => {
+        setOpen(false)
+    }
+    const toOpen = () => {
+        setOpen(true)
+    }
     return (
         <header className="header">
         <div className="container">
@@ -13,8 +21,8 @@ const Header = () => {
                 </div>
                 <nav className="header__nav">
                     <button className="header__btn-main-new _hover01" id="btnMainNew"><a href="#popNewCard">Создать новую задачу</a></button>
-                    <a href="#user-set-target" className="header__user _hover02">Ivan Ivanov</a>
-                    <User /> 
+                    <a href="#user-set-target" className="header__user _hover02" onClick={toOpen}>Ivan Ivanov</a>
+                    <User isOpen = {open} onClose = {toClose} /> 
                 </nav>					
             </div>
         </div>			
