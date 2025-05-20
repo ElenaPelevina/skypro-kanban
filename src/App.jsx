@@ -7,6 +7,7 @@ import PopNewCard from './components/popnewcard/popnewcard'
 import PopBrowse from './components/popbrowse/popbrowse'
 import Header from './components/header/header'
 import MainContent from './components/maincontent/maincontent'
+import { GlobalStyles, SWrapper } from './globalstyles'
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
 
   return (
   <>
-    <div className="wrapper">
+  <GlobalStyles/>
+    <SWrapper>
 		
 			<PopExit /> 
 
@@ -33,7 +35,7 @@ function App() {
 
 		<MainContent loading = {loading}/> 
 		
-    </div>
+    </SWrapper>
 
     <script src="js/script.js"></script>
 </>

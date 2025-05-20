@@ -1,14 +1,14 @@
-import { SCardsItem, SCardsCard, SCardGroup, SCardBtn, SCardBtnDiv, SCardContent, SCardTitle, SCardDate, SCardDateSvg, SCardDateP } from "./card.styled"
+import { SCardsItem, SCardsCard, SCardGroup, SCardBtn, SCardBtnDiv, SCardContent, SCardTitle, SCardDate, SCardDateSvg, SCardDateP, SCardThemeWebD, SCardThemeResearch, SCardThemeCopy } from "./card.styled"
 
 const Card = ({theme, title, date}) => {
     const getStyle = () => {
         
         if (theme === "Web Design") {
-            return "card__theme _orange"
+            return SCardThemeWebD
         } else if (theme === "Research") {
-            return "card__theme _green"
+            return SCardThemeResearch
         } else if (theme === "Copywriting") {
-            return "card__theme _purple"
+            return SCardThemeCopy
         }
     }
 
