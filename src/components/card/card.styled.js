@@ -18,7 +18,17 @@ export const SCardsItem = styled.div`
   } */
   
 `
-
+export const SCardsCard = styled.div`
+  width: 220px;
+  height: 130px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+  padding: 15px 13px 19px;
+`
 export const SCardGroup = styled.div`
   width: 100%;
   height: 20px;
@@ -77,3 +87,29 @@ export const SCardDateP = styled.p`
   color: #94A6BE;
   letter-spacing: 0.2px;
 `
+
+
+// const cardColors = {
+//     "Web Design": "#FF6D00",
+//     "Research":"#06B16E",
+//     "Copywriting": "#9A48F1",
+// }
+
+// const cardBackground = {
+//     WebDesign: "#FFE4C2",
+//     Research: "#B4FDD1",
+//     Copywriting: "#E9D4FF",
+// }
+
+// export const SCardTheme = styled.div`
+//   width: auto;
+//   height: 20px;
+//   padding: 5px 14px;
+//   border-radius: 18px;
+// `
+
+// export const SCardThemeP = styled.p`
+//   font-size: 10px;
+//   font-weight: 600;
+//   line-height: 10px;
+// `

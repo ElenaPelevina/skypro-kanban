@@ -1,6 +1,6 @@
 import User from "../popuser/user";
 import { useState } from "react";
-import { SHeader, SContainer, SHeaderBlock
+import { SHeader, SContainer, SHeaderBlock, SHeaderNav, SHeaderBtnMainNew, SHeaderBtnMainNewA, SHeaderUser, SHeaderLogoLight,SHeaderLogoDark,SHeaderLogoImg
  } from "./header.styled";
 
 const Header = () => {
@@ -15,17 +15,17 @@ const Header = () => {
         <SHeader>
         <SContainer>
             <SHeaderBlock>
-                <div className="header__logo _show _light">
-                    <a href="" target="_self"><img src="images/logo.png" alt="logo"></img></a>
-                </div>
-                <div className="header__logo _dark">
-                    <a href="" target="_self"><img src="images/logo_dark.png" alt="logo"></img></a>
-                </div>
-                <nav className="header__nav">
-                    <button className="header__btn-main-new _hover01" id="btnMainNew"><a href="#popNewCard">Создать новую задачу</a></button>
-                    <a href="#user-set-target" className="header__user _hover02" onClick={toOpen}>Ivan Ivanov</a>
+                <SHeaderLogoLight>
+                    <a href="" target="_self"><SHeaderLogoImg src="images/logo.png" alt="logo"></SHeaderLogoImg></a>
+                </SHeaderLogoLight>
+                <SHeaderLogoDark>
+                    <a href="" target="_self"><SHeaderLogoImg src="images/logo_dark.png" alt="logo"></SHeaderLogoImg></a>
+                </SHeaderLogoDark>
+                <SHeaderNav>
+                    <SHeaderBtnMainNew id="btnMainNew"><SHeaderBtnMainNewA href="#popNewCard">Создать новую задачу</SHeaderBtnMainNewA></SHeaderBtnMainNew>
+                    <SHeaderUser href="#user-set-target" onClick={(!open? toOpen : toClose)} >Ivan Ivanov</SHeaderUser>
                     <User isOpen = {open} onClose = {toClose} /> 
-                </nav>					
+                </SHeaderNav>					
             </SHeaderBlock>
         </SContainer>			
     </SHeader>

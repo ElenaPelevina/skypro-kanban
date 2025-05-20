@@ -1,4 +1,4 @@
-import { SCardsItem, SCardGroup, SCardBtn, SCardBtnDiv, SCardContent, SCardTitle, SCardDate, SCardDateSvg, SCardDateP } from "./card.styled"
+import { SCardsItem, SCardsCard, SCardGroup, SCardBtn, SCardBtnDiv, SCardContent, SCardTitle, SCardDate, SCardDateSvg, SCardDateP } from "./card.styled"
 
 const Card = ({theme, title, date}) => {
     const getStyle = () => {
@@ -23,9 +23,9 @@ const Card = ({theme, title, date}) => {
     }
     return (
         <SCardsItem>
-        <div className="cards__card card">
+        <SCardsCard>
             <SCardGroup>
-                <div className= {getStyle()} >
+                <div className = {getStyle()}>
                     <p className= {getFontColor()}>{theme}</p>
                 </div>
                 <a href="#popBrowse" target="_self">
@@ -55,7 +55,7 @@ const Card = ({theme, title, date}) => {
                     <SCardDateP>{date}</SCardDateP>
                 </SCardDate>
             </SCardContent>
-        </div>
+        </SCardsCard>
     </SCardsItem>
     )
 }
