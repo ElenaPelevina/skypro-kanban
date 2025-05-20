@@ -1,5 +1,7 @@
 import User from "../popuser/user";
 import { useState } from "react";
+import { SHeader, SContainer, SHeaderBlock
+ } from "./header.styled";
 
 const Header = () => {
     const [open, setOpen] = useState(false)
@@ -10,9 +12,9 @@ const Header = () => {
         setOpen(true)
     }
     return (
-        <header className="header">
-        <div className="container">
-            <div className="header__block">
+        <SHeader>
+        <SContainer>
+            <SHeaderBlock>
                 <div className="header__logo _show _light">
                     <a href="" target="_self"><img src="images/logo.png" alt="logo"></img></a>
                 </div>
@@ -24,9 +26,9 @@ const Header = () => {
                     <a href="#user-set-target" className="header__user _hover02" onClick={toOpen}>Ivan Ivanov</a>
                     <User isOpen = {open} onClose = {toClose} /> 
                 </nav>					
-            </div>
-        </div>			
-    </header>
+            </SHeaderBlock>
+        </SContainer>			
+    </SHeader>
     )
 }
 
