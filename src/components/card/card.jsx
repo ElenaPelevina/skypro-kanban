@@ -1,33 +1,14 @@
-import { SCardsItem, SCardsCard, SCardGroup, SCardBtn, SCardBtnDiv, SCardContent, SCardTitle, SCardDate, SCardDateSvg, SCardDateP, SCardThemeWebD, SCardThemeResearch, SCardThemeCopy } from "./card.styled"
+import { SCardsItem, SCardsCard, SCardGroup, SCardBtn, SCardBtnDiv, SCardContent, SCardTitle, SCardDate, SCardDateSvg, SCardDateP, SCardTheme, SFontTheme, cardBackground, cardColors } from "./card.styled"
 
 const Card = ({theme, title, date}) => {
-    const getStyle = () => {
-        
-        if (theme === "Web Design") {
-            return SCardThemeWebD
-        } else if (theme === "Research") {
-            return SCardThemeResearch
-        } else if (theme === "Copywriting") {
-            return SCardThemeCopy
-        }
-    }
-
-    const getFontColor = () => {
-        if (theme === "Web Design") {
-            return "_orange"
-        } else if (theme === "Research") {
-            return "_green"
-        } else if (theme === "Copywriting") {
-            return "_purple"
-        }
-    }
+    
     return (
         <SCardsItem>
         <SCardsCard>
             <SCardGroup>
-                <div className = {getStyle()}>
-                    <p className= {getFontColor()}>{theme}</p>
-                </div>
+                <SCardTheme $color = {cardBackground[theme]}>
+                    <SFontTheme $color = {cardColors[theme]}>{theme}</SFontTheme>
+                </SCardTheme>
                 <a href="#popBrowse" target="_self">
                     <SCardBtn>
                         <SCardBtnDiv></SCardBtnDiv>
