@@ -114,3 +114,8 @@ font-weight: 700;
 
 export const  SCalendarCellOtherMonthWeekend = styled(SCalendarCellOtherMonth)`
 `
+
+export const SCalendarCellCellDayActive = styled(SCalendarCellCellDay)`
+  background-color: #94A6BE;
+  color: #FFFFFF;
+`
