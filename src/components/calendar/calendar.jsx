@@ -1,4 +1,4 @@
-import { SCalendarNav, SCalendarMonth, SNavActions, SNavAction, SNavActionSvg, SCalendarContent, SCalendarDaysNames, SCalendarDayName, SCalendarDayNameEnd, SCalendarCells, SCalendarCellOtherMonth, SCalendarCellCellDay, SCalendarCellCellDayWeekend, SCalendarCellCellDayCurrent, SCalendarCellOtherMonthWeekend, SCalendarCellCellDayWeekendActive } from "./calendar.styled";
+import { SCalendarNav, SCalendarMonth, SNavActions, SNavAction, SNavActionSvg, SCalendarContent, SCalendarDaysNames, SCalendarDayName, SCalendarDayNameEnd, SCalendarCells, SCalendarCellOtherMonth, SCalendarCellCellDay, SCalendarCellCellDayWeekend, SCalendarCellCellDayCurrent, SCalendarCellOtherMonthWeekend } from "./calendar.styled";
 
 const Calendar = () => {
     return (
