@@ -1,15 +1,17 @@
 import Card from "../card/card"
 import { cardList } from "../../data";
+import { SMainColumn, SColumnTitle, SColumnTitleP, SCards } from "./column.styled";
 
 const Column = ({status}) => {
-  return (<div className="main__column column">
-    <div className="column__title">
-        <p>{status}</p>
-    </div>
-    <div className="cards">
+  return (<SMainColumn>
+    <SColumnTitle>
+        <SColumnTitleP>{status}</SColumnTitleP>
+    </SColumnTitle>
+    <SCards>
         {cardList.filter((card) => card.status === status).
         map((card, id) => (
-            <Card card = {card} key = {id}
+            <Card card = {card} 
+            key = {id}
             theme = {card.theme}
             title = {card.title}
             date = {card.date}
@@ -17,8 +19,8 @@ const Column = ({status}) => {
         ))}
         
     
-    </div>
- </div>	
+    </SCards>
+ </SMainColumn>	
   )
 }
 

@@ -1,14 +1,16 @@
 
 import Column from "../column/column"
+import { SContainer } from "../header/header.styled"
+import { SMain, SMainBlock, SMainContent } from "./maincontent.styled"
 
 const MainContent = ({loading}) => {
 	if (loading === true) {
 		return <p style = {{fontSize: "30px", display: "flex", justifyContent: "center"}}>Идет загрузка...</p>
 	} else return (
-        <main className="main">
-			<div className="container">
-				<div className="main__block">
-					<div className="main__content">
+        <SMain>
+			<SContainer>
+				<SMainBlock>
+					<SMainContent>
 						
 						<Column status = 'Без статуса' /> 
 
@@ -21,11 +23,11 @@ const MainContent = ({loading}) => {
                         <Column status = 'Готово'/>
 
 						
-					</div>
+					</SMainContent>
 				
-				</div>
-			</div>
-		</main>
+				</SMainBlock>
+			</SContainer>
+		</SMain>
     )
 }
 
