@@ -22,7 +22,7 @@ const Header = () => {
                     <a href="" target="_self"><SHeaderLogoImg src="images/logo_dark.png" alt="logo"></SHeaderLogoImg></a>
                 </SHeaderLogoDark>
                 <SHeaderNav>
-                    <SHeaderBtnMainNew id="btnMainNew"><SHeaderBtnMainNewA href="#popNewCard">Создать новую задачу</SHeaderBtnMainNewA></SHeaderBtnMainNew>
+                    <SHeaderBtnMainNew id="btnMainNew"><SHeaderBtnMainNewA to="/addnewtask">Создать новую задачу</SHeaderBtnMainNewA></SHeaderBtnMainNew>
                     <SHeaderUser href="#user-set-target" onClick={(!open? toOpen : toClose)} >Ivan Ivanov</SHeaderUser>
                     <User isOpen = {open} onClose = {toClose} /> 
                 </SHeaderNav>					

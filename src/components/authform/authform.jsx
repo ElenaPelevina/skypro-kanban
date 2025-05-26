@@ -1,32 +1,34 @@
+import { SAWrapper, SContainerSignUp, SModal, SModalBlock, SModalTtl, SModalTtlH2, SModalFormLogin, SModalInput, SModalBtnSignUpEnt, SModalBtnSignUpentA, SModalFormGroup, SModalFormGroupA, SModalFormGroupP  } from "./authform.styled"
+
 const AuthForm = ({isSignUp}) => {
     return (
-    <div className=" wrapper ">
-        <div className="container-signup">
-            <div className="modal">
-				<div className="modal__block">
-					<div className="modal__ttl">
-						<h2>{isSignUp ? "Регистрация" : "Вход"}</h2>
-					</div>
-					<form className="modal__form-login" id="formLogUp" action="#">
+    <SAWrapper>
+        <SContainerSignUp>
+            <SModal>
+				<SModalBlock>
+					<SModalTtl>
+						<SModalTtlH2>{isSignUp ? "Регистрация" : "Вход"}</SModalTtlH2>
+					</SModalTtl>
+					<SModalFormLogin id="formLogUp" action="#">
                         {isSignUp && (
-						<input className="modal__input first-name" type="text" name="first-name" id="first-name" placeholder="Имя"/>
+						<SModalInput type="text" name="first-name" id="first-name" placeholder="Имя"/>
                         )}
-						<input className="modal__input login" type="text" name="login" id="loginReg" placeholder="Эл. почта"/>
-						<input className="modal__input password-first" type="password" name="password" id="passwordFirst" placeholder="Пароль"/>
-						<button className="modal__btn-signup-ent _hover01" id="SignUpEnter"><a href="../main.html">{isSignUp ? "Зарегистрироваться" : "Войти"}</a> </button>
-						<div className="modal__form-group">
+						<SModalInput type="text" name="login" id="loginReg" placeholder="Эл. почта"/>
+						<SModalInput type="password" name="password" id="passwordFirst" placeholder="Пароль"/>
+						<SModalBtnSignUpEnt id="SignUpEnter"><SModalBtnSignUpentA to ="/">{isSignUp ? "Зарегистрироваться" : "Войти"}</SModalBtnSignUpentA> </SModalBtnSignUpEnt>
+						<SModalFormGroup>
 							{isSignUp && (
-                                <p>Уже есть аккаунт?  <a href="signin.html">Войдите здесь</a></p>
+                                <SModalFormGroupP>Уже есть аккаунт?  <SModalFormGroupA to="/login">Войдите здесь</SModalFormGroupA></SModalFormGroupP>
                             )}
                             {!isSignUp && (
-                                <p>Нужно зарегистрироваться? <a href="signup.html">Регистрируйтесь здесь</a></p>
+                                <SModalFormGroupP>Нужно зарегистрироваться? <SModalFormGroupA to="/registration">Регистрируйтесь здесь</SModalFormGroupA></SModalFormGroupP>
                             )}
-						</div>
-					</form>
-				</div> 
-			</div>
-        </div>
-    </div>  
+						</SModalFormGroup>
+					</SModalFormLogin>
+				</SModalBlock> 
+			</SModal>
+        </SContainerSignUp>
+    </SAWrapper>  
     )
 }
 

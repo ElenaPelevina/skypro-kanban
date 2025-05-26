@@ -1,6 +1,8 @@
 import Calendar from "../calendar/calendar";
+import { cardList } from "../../data";
+import { Link } from "react-router-dom";
 
-const PopBrowse = () => {
+const PopBrowse = ({theme, title, date}) => {
     return (
         <div className="pop-browse" id="popBrowse">
 				<div className="pop-browse__container">
@@ -9,7 +11,7 @@ const PopBrowse = () => {
 							<div className="pop-browse__top-block">
 								<h3 className="pop-browse__ttl">Название задачи</h3>
 								<div className="categories__theme theme-top _orange _active-category">
-									<p className="_orange">Web Design</p>
+									<p className="_orange">{cardList.theme}</p>
 								</div>
 							</div>
 							<div className="pop-browse__status status">
@@ -62,7 +64,7 @@ const PopBrowse = () => {
 									<button className="btn-browse__edit _btn-bor _hover03"><a href="#">Редактировать задачу</a></button>
 									<button className="btn-browse__delete _btn-bor _hover03"><a href="#">Удалить задачу</a></button>
 								</div>
-								<button className="btn-browse__close _btn-bg _hover01"><a href="#">Закрыть</a></button>
+								<button className="btn-browse__close _btn-bg _hover01"><Link to="/">Закрыть</Link></button>
 							</div>
 							<div className="pop-browse__btn-edit _hide">
 								<div className="btn-group">
@@ -70,7 +72,7 @@ const PopBrowse = () => {
 									<button className="btn-edit__edit _btn-bor _hover03"><a href="#">Отменить</a></button>
 									<button className="btn-edit__delete _btn-bor _hover03" id="btnDelete"><a href="#">Удалить задачу</a></button>
 								</div>
-								<button className="btn-edit__close _btn-bg _hover01"><a href="#">Закрыть</a></button>
+								<button className="btn-edit__close _btn-bg _hover01"><Link to="/">Закрыть</Link></button>
 							</div>
 													
 						</div>

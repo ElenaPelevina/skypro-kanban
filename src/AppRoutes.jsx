@@ -6,6 +6,7 @@ import { RegistrationPage } from "./pages/Registration";
 import { BrowsePage } from "./pages/Browse";
 import { AddNewTaskPage } from "./pages/AddNewTask";
 import { ExitPage } from "./pages/Exit";
+import { UserPage } from "./pages/User";
 
 function AppRoutes() {
      const [loading, setLoading] = useState(true)
@@ -18,12 +19,14 @@ function AppRoutes() {
 
  return (
     <Routes>
-        <Route path="/" element = {<MainPage loading = {loading}/>}  />
+        <Route path="/" element = {<MainPage loading = {loading}/>} >
+          <Route path="/browsepage/" element = {<BrowsePage />} />
+          <Route path="/addnewtask" element = {<AddNewTaskPage />} />
+          <Route path="/exit" element = {<ExitPage />} />
+        </Route>
         <Route path="/login" element = {<LoginPage/>} />
         <Route path="/registration" element = {<RegistrationPage/>} />
-        <Route path="/browsepage" element = {<BrowsePage />} />
-        <Route path="/addnewtask" element = {<AddNewTaskPage />} />
-        <Route path="/exit" element = {<ExitPage />} />
+    
     </Routes>
 
  )

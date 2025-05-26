@@ -5,24 +5,17 @@ import PopNewCard from "../components/popnewcard/popnewcard"
 import PopBrowse from "../components/popbrowse/popbrowse"
 import Header from "../components/header/header"
 import MainContent from "../components/maincontent/maincontent"
+import { Outlet } from "react-router-dom"
 
 const MainPage = ({loading}) => {
 return (
   <>
   <GlobalStyles/>
     <SWrapper>
-		
-			<PopExit /> 
-
-			<PopNewCard />
-
-			<PopBrowse /> 
-	
-
 		<Header /> 
 
 		<MainContent loading = {loading}/> 
-		
+		<Outlet />
     </SWrapper>
 
     <script src="js/script.js"></script>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
 const cardAnimation = keyframes`
@@ -114,4 +115,7 @@ export const SFontTheme = styled.p`
   font-weight: 600;
   line-height: 10px;
   color: ${({$color}) => $color};
+`
+
+export const SCardPoPBrowseLink = styled(Link)`
 `
