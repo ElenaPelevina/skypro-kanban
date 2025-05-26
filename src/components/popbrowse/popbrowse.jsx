@@ -1,17 +1,23 @@
 import Calendar from "../calendar/calendar";
+import { useParams } from "react-router-dom";
+import { useMemo } from "react";
 import { cardList } from "../../data";
 import { Link } from "react-router-dom";
 
-const PopBrowse = ({theme, title, date}) => {
+
+const PopBrowse = () => {
+	const {id} = useParams()
+	// const card = useMemo(() => cardList.filter((card) => card.id === id) || {theme: "", title: "", date: ""}, [id])
+	
     return (
         <div className="pop-browse" id="popBrowse">
 				<div className="pop-browse__container">
 					<div className="pop-browse__block">
 						<div className="pop-browse__content">
 							<div className="pop-browse__top-block">
-								<h3 className="pop-browse__ttl">Название задачи</h3>
+								<h3 className="pop-browse__ttl">Название задачи {id}</h3>
 								<div className="categories__theme theme-top _orange _active-category">
-									<p className="_orange">{cardList.theme}</p>
+									<p className="_orange">Web Design</p>
 								</div>
 							</div>
 							<div className="pop-browse__status status">

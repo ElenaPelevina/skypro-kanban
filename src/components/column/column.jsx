@@ -10,7 +10,7 @@ const Column = ({status}) => {
     <SCards>
         {cardList.filter((card) => card.status === status).
         map((card, id) => (
-            <Card card = {card} 
+            <Card card = {card}
             key = {id}
             theme = {card.theme}
             title = {card.title}

@@ -20,7 +20,7 @@ function AppRoutes() {
  return (
     <Routes>
         <Route path="/" element = {<MainPage loading = {loading}/>} >
-          <Route path="/browsepage/" element = {<BrowsePage />} />
+          <Route path="/browsepage/:id" element = {<BrowsePage />} />
           <Route path="/addnewtask" element = {<AddNewTaskPage />} />
           <Route path="/exit" element = {<ExitPage />} />
         </Route>

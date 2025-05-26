@@ -70,10 +70,10 @@ body {
   border-bottom-color: #33399b;
 }
 
-/* ._hover03:hover {
+._hover03:hover {
   background-color: #33399b;
   color: #FFFFFF;
-} */
+}
 ._hover03:hover a {
   color: #FFFFFF;
 }
