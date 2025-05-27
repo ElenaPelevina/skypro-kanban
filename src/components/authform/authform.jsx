@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom"
 import { SAWrapper, SContainerSignUp, SModal, SModalBlock, SModalTtl, SModalTtlH2, SModalFormLogin, SModalInput, SModalBtnSignUpEnt, SModalBtnSignUpentA, SModalFormGroup, SModalFormGroupA, SModalFormGroupP  } from "./authform.styled"
 
-const AuthForm = ({isSignUp}) => {
+const AuthForm = ({isSignUp, setIsAuth}) => {
+	const navigate = useNavigate()
+	const handleLogin = (e) => {
+		e.preventDefault()
+		setIsAuth(true)
+		navigate("/")
+	}
     return (
     <SAWrapper>
         <SContainerSignUp>
@@ -15,7 +22,7 @@ const AuthForm = ({isSignUp}) => {
                         )}
 						<SModalInput type="text" name="login" id="loginReg" placeholder="Эл. почта"/>
 						<SModalInput type="password" name="password" id="passwordFirst" placeholder="Пароль"/>
-						<SModalBtnSignUpEnt id="SignUpEnter"><SModalBtnSignUpentA to ="/">{isSignUp ? "Зарегистрироваться" : "Войти"}</SModalBtnSignUpentA> </SModalBtnSignUpEnt>
+						<SModalBtnSignUpEnt onClick={handleLogin} id="SignUpEnter"><SModalBtnSignUpentA>{isSignUp ? "Зарегистрироваться" : "Войти"}</SModalBtnSignUpentA> </SModalBtnSignUpEnt>
 						<SModalFormGroup>
 							{isSignUp && (
                                 <SModalFormGroupP>Уже есть аккаунт?  <SModalFormGroupA to="/login">Войдите здесь</SModalFormGroupA></SModalFormGroupP>

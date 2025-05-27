@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import { SPopExit, SPopExitBlock, SPopExitContainer, SPopExitForm, SPopExitFormGroup, SPopExitNo, SPopExitNoA, SPopExitTtl, SPopExitTtlH2, SPopExitYes, SPopExitYesA } from "./popExit.Styled";
 
-const PopExit = () => {
+const PopExit = ({setIsAuth}) => {
+	const navigate = useNavigate()
+	const handleLogOut = (e) => {
+		e.preventDefault()
+		setIsAuth(false)
+		navigate("/login")
+	}
     return (
         <SPopExit id="popExit">
 				<SPopExitContainer>
@@ -10,7 +17,7 @@ const PopExit = () => {
 						</SPopExitTtl>
 						<SPopExitForm id="formExit" action="#">
 							<SPopExitFormGroup>
-								<SPopExitYes id="exitYes"><SPopExitYesA to="/login">Да, выйти</SPopExitYesA> </SPopExitYes>
+								<SPopExitYes onClick={handleLogOut} id="exitYes"><SPopExitYesA to="/login">Да, выйти</SPopExitYesA> </SPopExitYes>
 								<SPopExitNo id="exitNo"><SPopExitNoA to="/">Нет, остаться</SPopExitNoA> </SPopExitNo>
 							</SPopExitFormGroup>
 						</SPopExitForm>

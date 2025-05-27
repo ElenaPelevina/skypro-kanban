@@ -7,8 +7,10 @@ import { BrowsePage } from "./pages/Browse";
 import { AddNewTaskPage } from "./pages/AddNewTask";
 import { ExitPage } from "./pages/Exit";
 import { NotFoundPage } from "./pages/NotFund";
+import PrivateRoute from "./PrivateRoute";
 
 function AppRoutes() {
+     const [isAuth, setIsAuth] = useState(false)
      const [loading, setLoading] = useState(true)
 
  useEffect(() => {
@@ -19,12 +21,14 @@ function AppRoutes() {
 
  return (
     <Routes>
-        <Route path="/" element = {<MainPage loading = {loading}/>} >
+      <Route element = {<PrivateRoute isAuth = {isAuth} />}>
+        <Route path="/" element = {<MainPage setIsAuth = {setIsAuth} loading = {loading}/>} >
           <Route path="/browsepage/:id" element = {<BrowsePage />} />
           <Route path="/addnewtask" element = {<AddNewTaskPage />} />
-          <Route path="/exit" element = {<ExitPage />} />
+          <Route path="/exit" element = {<ExitPage setIsAuth={setIsAuth} />} />
         </Route>
-        <Route path="/login" element = {<LoginPage/>} />
+        </Route>
+        <Route path="/login" element = {<LoginPage setIsAuth = {setIsAuth}/>} />
         <Route path="/registration" element = {<RegistrationPage/>} />
         <Route path ="/*" element={<NotFoundPage />} />
     
