@@ -6,7 +6,7 @@ import { RegistrationPage } from "./pages/Registration";
 import { BrowsePage } from "./pages/Browse";
 import { AddNewTaskPage } from "./pages/AddNewTask";
 import { ExitPage } from "./pages/Exit";
-import { UserPage } from "./pages/User";
+import { NotFoundPage } from "./pages/NotFund";
 
 function AppRoutes() {
      const [loading, setLoading] = useState(true)
@@ -26,6 +26,7 @@ function AppRoutes() {
         </Route>
         <Route path="/login" element = {<LoginPage/>} />
         <Route path="/registration" element = {<RegistrationPage/>} />
+        <Route path ="/*" element={<NotFoundPage />} />
     
     </Routes>
 
