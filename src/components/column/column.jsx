@@ -1,8 +1,8 @@
 import Card from "../card/card"
-import { cardList } from "../../data";
+
 import { SMainColumn, SColumnTitle, SColumnTitleP, SCards } from "./column.styled";
 
-const Column = ({tasks, status, error}) => {
+const Column = ({tasks, status}) => {
   return (<SMainColumn>
     <SColumnTitle>
         <SColumnTitleP>{status}</SColumnTitleP>

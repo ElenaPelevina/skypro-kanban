@@ -1,3 +1,4 @@
+import { addTasks } from "../../services/api";
 import Calendar from "../calendar/calendar"
 import { Link } from "react-router-dom";
 const PopNewCard = () => {
@@ -46,7 +47,7 @@ const PopNewCard = () => {
                             </div>
                         </div>
                     </div>
-                    <button className="form-new__create _hover01" id="btnCreate">Создать задачу</button>
+                    <button onClick={addTasks} className="form-new__create _hover01" id="btnCreate">Создать задачу</button>
                 </div>
             </div>
         </div>
