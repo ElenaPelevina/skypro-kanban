@@ -63,10 +63,6 @@ export const SHeaderBtnMainNew = styled.button`
   }
 `
 
-export const SHeaderBtnMainNewA = styled(Link)`
- color: #FFFFFF;
-`
-
 export const SHeaderUser = styled.a`
   height: 20px;
   display: flex;

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { SAWrapper, SContainerSignUp, SModal, SModalBlock, SModalTtl, SModalTtlH2, SModalFormLogin, SModalInput, SModalBtnSignUpEnt, SModalBtnSignUpentA, SModalFormGroup, SModalFormGroupA, SModalFormGroupP  } from "./authform.styled"
+import { SAWrapper, SContainerSignUp, SModal, SModalBlock, SModalTtl, SModalTtlH2, SModalFormLogin, SModalInput, SModalBtnSignUpEnt, SModalFormGroup, SModalFormGroupA, SModalFormGroupP  } from "./authform.styled"
 import { signIn, signUp } from "../../services/auth"
 
 const AuthForm = ({isSignUp, setIsAuth}) => {
@@ -94,7 +94,7 @@ const AuthForm = ({isSignUp, setIsAuth}) => {
                         )}
 						<SModalInput type="text" name="login" id="loginReg" placeholder="Эл. почта"/>
 						<SModalInput type="password" name="password" id="passwordFirst" placeholder="Пароль"/>
-						<SModalBtnSignUpEnt onClick={handleLogin} id="SignUpEnter"><SModalBtnSignUpentA>{isSignUp ? "Зарегистрироваться" : "Войти"}</SModalBtnSignUpentA> </SModalBtnSignUpEnt>
+						<SModalBtnSignUpEnt onClick={handleLogin} id="SignUpEnter">{isSignUp ? "Зарегистрироваться" : "Войти"}</SModalBtnSignUpEnt>
 						<SModalFormGroup>
 							{isSignUp && (
                                 <SModalFormGroupP>Уже есть аккаунт?  <SModalFormGroupA to="/login">Войдите здесь</SModalFormGroupA></SModalFormGroupP>

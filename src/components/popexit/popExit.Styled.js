@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+
 
 export const SPopExit = styled.div`
   width: 100%;
@@ -94,14 +94,6 @@ export const SPopExitYes = styled.button`
  }
 `
 
-export const SPopExitYesA = styled(Link)`
-  width: 100%;
-  height: 100%;
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
 
 export const SPopExitNo = styled.button`
   width: 153px;
@@ -117,7 +109,7 @@ export const SPopExitNo = styled.button`
   line-height: 21px;
   font-weight: 500;
   letter-spacing: -0.14px;
-  color: #FFFFFF;
+  color: #565EEF;
   &:hover {
    background-color: #33399b;
    color: #FFFFFF;
@@ -126,13 +118,4 @@ export const SPopExitNo = styled.button`
     width: 100%;
     height: 40px;
   }
-`
-
-export const SPopExitNoA = styled(Link)`
-  width: 100%;
-  height: 100%;
-  color: #565EEF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `

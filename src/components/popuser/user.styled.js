@@ -30,6 +30,3 @@ export const SPopUserSetButton = styled.button`
   border-radius: 4px;
   border: 1px solid #565EEF;
 `
-export const SPopUserSetButtonA = styled(Link)`
-color: #565EEF;
-`
