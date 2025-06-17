@@ -4,6 +4,7 @@ import { signIn, signUp } from "../../services/auth"
 import { useState } from "react"
 
 const AuthForm = ({isSignUp, setIsAuth}) => {
+  
 	const navigate = useNavigate()
 	const handleLogin = (e) => {
 		e.preventDefault()

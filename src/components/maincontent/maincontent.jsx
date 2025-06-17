@@ -5,6 +5,7 @@ import { SMain, SMainBlock, SMainContent } from "./maincontent.styled"
 import { useEffect, useState, useCallback } from "react"
 import { fetchTasks } from "../../services/api"
 
+
 const MainContent = () => {
 	const [loading, setLoading] = useState(false)
     const [tasks, setTasks] = useState([])
@@ -14,7 +15,7 @@ const MainContent = () => {
       try {
         setLoading(true)
         const data = await fetchTasks({
-          token: "bgc0b8awbwas6g5g5k5o5s5w606g37w3cc3bo3b83k39s3co3c83c03ck"
+          token: 'bgc0b8awbwas6g5g5k5o5s5w606g37w3cc3bo3b83k39s3co3c83c03ck'
         })
         if (data) setTasks(data)
       } catch (err) {

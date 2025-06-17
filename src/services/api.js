@@ -2,7 +2,10 @@ import axios from "axios";
 
 const API_URL = 'https://wedev-api.sky.pro/api/kanban'
 
+
+
 export async function fetchTasks({token}) {
+
     try {
         const data = await axios.get(API_URL, {
             headers: {
@@ -43,4 +46,26 @@ export async function editTask({token, id, task}) {
     } catch (error) {
         throw new Error(error.message)
     }
+}
+
+export async function getTask ({token, id}) {
+    try {
+        const data = await axios.get(API_URL + id,  {
+            headers: {
+                Authorization: 'Bearer ' + token,
+        },
+        })
+        return data.data
+    } catch (error) {
+         throw new Error(error.message)
+    }
+}
+
+export async function deleteTask ({token, id}) {
+     const data = await axios.delete(API_URL + id, {
+            headers: {
+                Authorization: 'Bearer ' + token,
+        },
+        })
+        return data.data.tasks
 }
