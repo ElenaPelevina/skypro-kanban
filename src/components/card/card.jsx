@@ -1,6 +1,6 @@
-import { SCardsItem, SCardsCard, SCardGroup, SCardBtn, SCardBtnDiv, SCardContent, SCardTitle, SCardDate, SCardDateSvg, SCardDateP, SCardTheme, SFontTheme, cardBackground, cardColors } from "./card.styled"
+import { SCardsItem, SCardsCard, SCardPoPBrowseLink, SCardGroup, SCardBtn, SCardBtnDiv, SCardContent, SCardTitle, SCardDate, SCardDateSvg, SCardDateP, SCardTheme, SFontTheme, cardBackground, cardColors } from "./card.styled"
 
-const Card = ({theme, title, date}) => {
+const Card = ({theme, title, date, card}) => {
     
     return (
         <SCardsItem>
@@ -9,13 +9,13 @@ const Card = ({theme, title, date}) => {
                 <SCardTheme $color = {cardBackground[theme]}>
                     <SFontTheme $color = {cardColors[theme]}>{theme}</SFontTheme>
                 </SCardTheme>
-                <a href="#popBrowse" target="_self">
+                <SCardPoPBrowseLink to={"/browsepage/"+ card.id} target="_self">
                     <SCardBtn>
                         <SCardBtnDiv></SCardBtnDiv>
                         <SCardBtnDiv></SCardBtnDiv>
                         <SCardBtnDiv></SCardBtnDiv>
                     </SCardBtn>
-                </a>
+                </SCardPoPBrowseLink>
             </SCardGroup>
             <SCardContent>
                 <a href="" target="_blank">

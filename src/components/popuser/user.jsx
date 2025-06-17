@@ -1,7 +1,10 @@
+import { SPopUserSetButton, SPopUserSetButtonA  } from "./user.styled"
+
+
 const User = ({isOpen, onClose}) => {
     if (!isOpen) return null
     return (
-        <div onClick = {onClose}  className="header__pop-user-set pop-user-set" id="user-set-target">
+        <div className ="header__pop-user-set pop-user-set" onClick = {onClose}   id="user-set-target">
         {/* <a href="">x</a>  */}
         <p  className="pop-user-set__name">Ivan Ivanov</p>
         <p className="pop-user-set__mail">ivan.ivanov@gmail.com</p>
@@ -9,7 +12,7 @@ const User = ({isOpen, onClose}) => {
             <p>Темная тема</p>
             <input type="checkbox" className="checkbox" name="checkbox"></input>
         </div>
-        <button type="button" className="_hover03"><a href="#popExit">Выйти</a></button>
+        <SPopUserSetButton type="button" className="_hover03"><SPopUserSetButtonA to="/exit">Выйти</SPopUserSetButtonA></SPopUserSetButton>
     </div>
     )
 }

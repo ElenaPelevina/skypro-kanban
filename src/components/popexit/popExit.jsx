@@ -1,20 +1,29 @@
-const PopExit = () => {
+import { useNavigate } from "react-router-dom";
+import { SPopExit, SPopExitBlock, SPopExitContainer, SPopExitForm, SPopExitFormGroup, SPopExitNo, SPopExitNoA, SPopExitTtl, SPopExitTtlH2, SPopExitYes, SPopExitYesA } from "./popExit.Styled";
+
+const PopExit = ({setIsAuth}) => {
+	const navigate = useNavigate()
+	const handleLogOut = (e) => {
+		e.preventDefault()
+		setIsAuth(false)
+		navigate("/login")
+	}
     return (
-        <div className="pop-exit" id="popExit">
-				<div className="pop-exit__container">
-					<div className="pop-exit__block">
-						<div className="pop-exit__ttl">
-							<h2>Выйти из аккаунта?</h2>
-						</div>
-						<form className="pop-exit__form" id="formExit" action="#">
-							<div className="pop-exit__form-group">
-								<button className="pop-exit__exit-yes _hover01" id="exitYes"><a href="modal/signin.html">Да, выйти</a> </button>
-								<button className="pop-exit__exit-no _hover03" id="exitNo"><a href="main.html">Нет, остаться</a> </button>
-							</div>
-						</form>
-					</div>
-				</div>
-		</div>
+        <SPopExit id="popExit">
+				<SPopExitContainer>
+					<SPopExitBlock>
+						<SPopExitTtl>
+							<SPopExitTtlH2>Выйти из аккаунта?</SPopExitTtlH2>
+						</SPopExitTtl>
+						<SPopExitForm id="formExit" action="#">
+							<SPopExitFormGroup>
+								<SPopExitYes onClick={handleLogOut} id="exitYes"><SPopExitYesA to="/login">Да, выйти</SPopExitYesA> </SPopExitYes>
+								<SPopExitNo id="exitNo"><SPopExitNoA to="/">Нет, остаться</SPopExitNoA> </SPopExitNo>
+							</SPopExitFormGroup>
+						</SPopExitForm>
+					</SPopExitBlock>
+				</SPopExitContainer>
+		</SPopExit>
     )
 }
 
