@@ -11,18 +11,18 @@ import PrivateRoute from "./PrivateRoute";
 
 function AppRoutes() {
      const [isAuth, setIsAuth] = useState(false)
-     const [loading, setLoading] = useState(true)
+    //  const [loading, setLoading] = useState(true)
 
- useEffect(() => {
-  setTimeout(() => {
-    setLoading(false);
-  }, 3000)
- }, [])
+//  useEffect(() => {
+//   setTimeout(() => {
+//     setLoading(false);
+//   }, 3000)
+//  }, [])
 
  return (
     <Routes>
       <Route element = {<PrivateRoute isAuth = {isAuth} />}>
-        <Route path="/" element = {<MainPage setIsAuth = {setIsAuth} loading = {loading}/>} >
+        <Route path="/" element = {<MainPage setIsAuth = {setIsAuth} />} >
           <Route path="/browsepage/:id" element = {<BrowsePage />} />
           <Route path="/addnewtask" element = {<AddNewTaskPage />} />
           <Route path="/exit" element = {<ExitPage setIsAuth={setIsAuth} />} />

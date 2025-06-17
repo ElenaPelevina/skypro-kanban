@@ -5,10 +5,12 @@ import { SHeader, SContainer, SHeaderBlock, SHeaderNav, SHeaderBtnMainNew, SHead
 
 const Header = () => {
     const [open, setOpen] = useState(false)
-    const toClose = () => {
+    const toClose = (e) => {
+        e.preventDefault()
         setOpen(false)
     }
-    const toOpen = () => {
+    const toOpen = (e) => {
+        e.preventDefault()
         setOpen(true)
     }
     return (
@@ -23,7 +25,7 @@ const Header = () => {
                 </SHeaderLogoDark>
                 <SHeaderNav>
                     <SHeaderBtnMainNew id="btnMainNew"><SHeaderBtnMainNewA to="/addnewtask">Создать новую задачу</SHeaderBtnMainNewA></SHeaderBtnMainNew>
-                    <SHeaderUser href="#user-set-target" onClick={(!open? toOpen : toClose)} >Ivan Ivanov</SHeaderUser>
+                    <SHeaderUser onClick={(!open? toOpen : toClose)} >Ivan Ivanov</SHeaderUser>
                     <User isOpen = {open} onClose = {toClose} /> 
                 </SHeaderNav>					
             </SHeaderBlock>

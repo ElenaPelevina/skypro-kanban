@@ -92,14 +92,14 @@ export const SCardDateP = styled.p`
 
 export const cardColors = {
     "Web Design": "#FF6D00",
-    Research:"#06B16E",
-    Copywriting: "#9A48F1",
+    "Research":"#06B16E",
+    "Copywriting": "#9A48F1",
 }
 
 export const cardBackground = {
     "Web Design": "#FFE4C2",
-    Research: "#B4FDD1",
-    Copywriting: "#E9D4FF",
+    "Research": "#B4FDD1",
+    "Copywriting": "#E9D4FF",
 }
 
 export const SCardTheme = styled.div`
