@@ -1,16 +1,12 @@
 import { useNavigate } from "react-router-dom"
-import { SAWrapper, SContainerSignUp, SModal, SModalBlock, SModalTtl, SModalTtlH2, SModalFormLogin, SModalInput, SModalBtnSignUpEnt, SModalFormGroup, SModalFormGroupA, SModalFormGroupP  } from "./authform.styled"
+import { SAWrapper, SContainerSignUp, SModal, SModalBlock, SModalTtl, SModalTtlH2, SModalFormLogin, SModalInput, SModalBtnSignUpEnt, SModalFormGroup, SModalFormGroupA, SModalFormGroupP, SErrorMessage  } from "./authform.styled"
 import { signIn, signUp } from "../../services/auth"
 import { useState } from "react"
+import BaseInput from "./baseInput"
 
 const AuthForm = ({isSignUp, setIsAuth}) => {
   
 	const navigate = useNavigate()
-	const handleLogin = (e) => {
-		e.preventDefault()
-		setIsAuth(true)
-		navigate("/")
-	}
 
 	const [formData, setFormData] = useState({
       name: "",
@@ -92,11 +88,12 @@ const AuthForm = ({isSignUp, setIsAuth}) => {
 					</SModalTtl>
 					<SModalFormLogin onSubmit={handleSubmit} id="formLogUp" action="#">
                         {isSignUp && (
-						<SModalInput error={error.name} onChange={handleChange} type="text" name="first-name" id="first-name" placeholder="Имя" value={formData.name}/>
+						<BaseInput error={errors.name} onChange={handleChange} type="text" name="first-name" id="first-name" placeholder="Имя" value={formData.name}/>
                         )}
-						<SModalInput error={error.login} onChange={handleChange} type="text" name="login" id="loginReg" placeholder="Эл. почта" value={formData.login}/>
-						<SModalInput error={error.password} onChange={handleChange} type="password" name="password" id="passwordFirst" placeholder="Пароль" value={formData.password}/>
-						<SModalBtnSignUpEnt onClick={handleLogin} id="SignUpEnter">{isSignUp ? "Зарегистрироваться" : "Войти"}</SModalBtnSignUpEnt>
+						<BaseInput error={errors.login} onChange={handleChange} type="text" name="login" id="loginReg" placeholder="Эл. почта" value={formData.login}/>
+						<BaseInput error={errors.password} onChange={handleChange} type="password" name="password" id="passwordFirst" placeholder="Пароль" value={formData.password}/>
+                  <SErrorMessage>{error}</SErrorMessage>
+						<SModalBtnSignUpEnt id="SignUpEnter">{isSignUp ? "Зарегистрироваться" : "Войти"}</SModalBtnSignUpEnt>
 						<SModalFormGroup>
 							{isSignUp && (
                                 <SModalFormGroupP>Уже есть аккаунт?  <SModalFormGroupA to="/login">Войдите здесь</SModalFormGroupA></SModalFormGroupP>

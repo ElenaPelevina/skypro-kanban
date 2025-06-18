@@ -145,3 +145,7 @@ export const SModalFormGroupA = styled(Link)`
   letter-spacing: -0.14px;
   text-decoration: underline;
 `
+
+export const SErrorMessage = styled.p`
+color: red;
+`
