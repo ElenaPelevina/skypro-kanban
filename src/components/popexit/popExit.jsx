@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { SPopExit, SPopExitBlock, SPopExitContainer, SPopExitForm, SPopExitFormGroup, SPopExitNo, SPopExitNoA, SPopExitTtl, SPopExitTtlH2, SPopExitYes, SPopExitYesA } from "./popExit.Styled";
+import { SPopExit, SPopExitBlock, SPopExitContainer, SPopExitForm, SPopExitFormGroup, SPopExitNo, SPopExitTtl, SPopExitTtlH2, SPopExitYes } from "./popExit.Styled";
 
 const PopExit = ({setIsAuth}) => {
 	const navigate = useNavigate()
@@ -7,6 +7,11 @@ const PopExit = ({setIsAuth}) => {
 		e.preventDefault()
 		setIsAuth(false)
 		navigate("/login")
+	}
+	const handleNoLogOut = (e) => {
+		e.preventDefault()
+		localStorage.removeItem("userInfo")
+		navigate("/")
 	}
     return (
         <SPopExit id="popExit">
@@ -17,8 +22,8 @@ const PopExit = ({setIsAuth}) => {
 						</SPopExitTtl>
 						<SPopExitForm id="formExit" action="#">
 							<SPopExitFormGroup>
-								<SPopExitYes onClick={handleLogOut} id="exitYes"><SPopExitYesA to="/login">Да, выйти</SPopExitYesA> </SPopExitYes>
-								<SPopExitNo id="exitNo"><SPopExitNoA to="/">Нет, остаться</SPopExitNoA> </SPopExitNo>
+								<SPopExitYes onClick={handleLogOut} id="exitYes">Да, выйти </SPopExitYes>
+								<SPopExitNo onClick={handleNoLogOut} id="exitNo">Нет, остаться</SPopExitNo>
 							</SPopExitFormGroup>
 						</SPopExitForm>
 					</SPopExitBlock>

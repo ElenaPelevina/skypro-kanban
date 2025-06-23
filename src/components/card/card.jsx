@@ -1,13 +1,20 @@
 import { SCardsItem, SCardsCard, SCardPoPBrowseLink, SCardGroup, SCardBtn, SCardBtnDiv, SCardContent, SCardTitle, SCardDate, SCardDateSvg, SCardDateP, SCardTheme, SFontTheme, cardBackground, cardColors } from "./card.styled"
 
-const Card = ({theme, title, date, card}) => {
-    
+const Card = ({topic, title, date, card}) => {
+        const options = {
+        hour: 'numeric',
+        minute: 'numeric',
+        day: 'numeric',
+        month: 'numeric',
+        year: '2-digit',
+    }
+
     return (
         <SCardsItem>
         <SCardsCard>
             <SCardGroup>
-                <SCardTheme $color = {cardBackground[theme]}>
-                    <SFontTheme $color = {cardColors[theme]}>{theme}</SFontTheme>
+                <SCardTheme $color = {cardBackground[topic]}>
+                    <SFontTheme $color = {cardColors[topic]}>{topic}</SFontTheme>
                 </SCardTheme>
                 <SCardPoPBrowseLink to={"/browsepage/"+ card.id} target="_self">
                     <SCardBtn>
@@ -33,7 +40,11 @@ const Card = ({theme, title, date, card}) => {
                             </clipPath>
                         </defs>
                     </SCardDateSvg>
-                    <SCardDateP>{date}</SCardDateP>
+                    <SCardDateP>{new Date(Date.parse(date)).toLocaleDateString(
+               'ru-RU',
+               options,
+           )
+}</SCardDateP>
                 </SCardDate>
             </SCardContent>
         </SCardsCard>

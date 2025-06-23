@@ -1,18 +1,19 @@
 import Card from "../card/card"
-import { cardList } from "../../data";
+
 import { SMainColumn, SColumnTitle, SColumnTitleP, SCards } from "./column.styled";
 
-const Column = ({status}) => {
+const Column = ({tasks, status}) => {
   return (<SMainColumn>
     <SColumnTitle>
         <SColumnTitleP>{status}</SColumnTitleP>
     </SColumnTitle>
     <SCards>
-        {cardList.filter((card) => card.status === status).
+        {tasks.filter((card) => card.status === status).
         map((card, id) => (
-            <Card card = {card}
+            <Card tasks = {tasks}
+            card = {card}
             key = {id}
-            theme = {card.theme}
+            topic = {card.topic}
             title = {card.title}
             date = {card.date}
             />

@@ -125,15 +125,6 @@ export const SModalBtnSignUpEnt = styled.button`
    }
 `
 
-export const SModalBtnSignUpentA = styled(Link)`
-  width: 100%;
-  height: 100%;
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
 export const SModalFormGroup = styled.div`
   text-align: center;
 `
@@ -153,4 +144,8 @@ export const SModalFormGroupA = styled(Link)`
   line-height: 150%;
   letter-spacing: -0.14px;
   text-decoration: underline;
+`
+
+export const SErrorMessage = styled.p`
+color: red;
 `
