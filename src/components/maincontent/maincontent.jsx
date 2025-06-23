@@ -11,11 +11,15 @@ const MainContent = () => {
     const [tasks, setTasks] = useState([])
     const [error, setError] = useState("")
 
+    const user = localStorage.getItem('userInfo')
+    let token = JSON.parse(user)
+
     const getTasks = useCallback(async () => {
+ 
       try {
         setLoading(true)
         const data = await fetchTasks({
-          token: 'bgc0b8awbwas6g5g5k5o5s5w606g37w3cc3bo3b83k39s3co3c83c03ck'
+          token: token.token
         })
         if (data) setTasks(data)
       } catch (err) {

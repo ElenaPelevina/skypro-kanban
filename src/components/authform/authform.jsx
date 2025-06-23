@@ -88,7 +88,7 @@ const AuthForm = ({isSignUp, setIsAuth}) => {
 					</SModalTtl>
 					<SModalFormLogin onSubmit={handleSubmit} id="formLogUp" action="#">
                         {isSignUp && (
-						<BaseInput error={errors.name} onChange={handleChange} type="text" name="first-name" id="first-name" placeholder="Имя" value={formData.name}/>
+						<BaseInput error={errors.name} onChange={handleChange} type="text" name="name" id="first-name" placeholder="Имя" value={formData.name}/>
                         )}
 						<BaseInput error={errors.login} onChange={handleChange} type="text" name="login" id="loginReg" placeholder="Эл. почта" value={formData.login}/>
 						<BaseInput error={errors.password} onChange={handleChange} type="password" name="password" id="passwordFirst" placeholder="Пароль" value={formData.password}/>

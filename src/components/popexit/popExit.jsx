@@ -10,6 +10,7 @@ const PopExit = ({setIsAuth}) => {
 	}
 	const handleNoLogOut = (e) => {
 		e.preventDefault()
+		localStorage.removeItem("userInfo")
 		navigate("/")
 	}
     return (

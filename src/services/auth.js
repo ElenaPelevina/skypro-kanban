@@ -9,6 +9,7 @@ export async function signIn(userData) {
              "Content-Type": "",
          },
       });
+      
       return data.data.user;
    } catch (error) {
       throw new Error(error.response.data.error);
